@@ -11,13 +11,11 @@ function getComputerChoice() {
         return "scissors"
     }
 }
-console.log(getComputerChoice());
 
 function getHumanChoice () {
     const choice = prompt ("Enter rock, paper or scissors:");
     return choice;
 }
-console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0; 
@@ -42,3 +40,21 @@ let computerScore = 0;
 
     console.log(`Score: Human ${humanScore} - Computer ${computerScore}`);
   }
+
+
+for (let i = 0; i < 5; i++) {
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+
+  console.log(`Human: ${humanSelection} | Computer: ${computerSelection}`);
+
+  playRound(humanSelection, computerSelection);
+}
+
+if (humanScore > computerScore) {
+  console.log("You won the game!");
+} else if (humanScore < computerScore) {
+  console.log("Computer wins the game!");
+} else {
+  console.log("The game is a draw!");
+}
